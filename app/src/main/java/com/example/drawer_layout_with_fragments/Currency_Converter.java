@@ -17,8 +17,7 @@ import android.widget.TextView;
 
 public class Currency_Converter extends Fragment {
     TextView tv_result;
-    String[] CurrencyFrom={"INR","POUND","EURO","USD"};
-    String[] CurrencyTo={"INR","POUND","EURO","USD"};
+    String[] Currency={"INR","POUND","EURO","USD"};
     String k,z;
     EditText num;
     int error =0;
@@ -165,16 +164,16 @@ public class Currency_Converter extends Fragment {
     {
         @Override
         public void onItemSelected(AdapterView arg0, View arg1, int position, long id)
-        {if(CurrencyTo[position]=="USD")
+        {if(Currency[position]=="USD")
         {
             k="USD";
         }
-        else if (CurrencyTo[position]=="INR")
+        else if (Currency[position]=="INR")
         {
             k="INR";
 
         }
-        else if (CurrencyTo[position]=="POUND")
+        else if (Currency[position]=="POUND")
         {
             k="POUND";
         }
@@ -194,16 +193,16 @@ public class Currency_Converter extends Fragment {
         @Override
         public void onItemSelected(AdapterView arg0, View arg1, int position, long id)
         {
-            if(CurrencyFrom[position]=="USD")
+            if(Currency[position]=="USD")
             {
                 z="USD";
             }
-            else if (CurrencyFrom[position]=="INR")
+            else if (Currency[position]=="INR")
             {
                 z="INR";
 
             }
-            else if (CurrencyFrom[position]=="POUND")
+            else if (Currency[position]=="POUND")
             {
                 z="POUND";
             }
