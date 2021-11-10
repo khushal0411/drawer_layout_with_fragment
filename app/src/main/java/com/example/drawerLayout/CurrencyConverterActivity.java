@@ -1,4 +1,4 @@
-package com.example.drawer_layout_with_fragments;
+package com.example.drawerLayout;
 
 import android.os.Bundle;
 
@@ -14,15 +14,17 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.drawer_layout_with_fragments.R;
 
-public class Currency_Converter extends Fragment {
-    TextView tv_result;
+
+public class CurrencyConverterActivity extends Fragment {
+    TextView result;
     String[] Currency={"INR","POUND","EURO","USD"};
     String k,z;
     EditText num;
     int error =0;
     double amt=0;
-   Button btn_submit;
+   Button calculate;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,11 +35,11 @@ public class Currency_Converter extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_currency__converter, container, false);
-   tv_result=view.findViewById(R.id.tv_result);
+        View view=inflater.inflate(R.layout.fragment_currencyconverter, container, false);
+   result=view.findViewById(R.id.tv_result);
 
    num=view.findViewById(R.id.et_num);
-   btn_submit=view.findViewById(R.id.btn_submit);
+   calculate=view.findViewById(R.id.btn_submit);
 
         Spinner spin =view.findViewById(R.id.spin_from);
         Spinner spin2=view.findViewById(R.id.spin_convertto);
@@ -52,7 +54,7 @@ public class Currency_Converter extends Fragment {
         spin2.setOnItemSelectedListener(new Currencyto());
 
         spin.setOnItemSelectedListener(new Currencyfrom());
-        btn_submit.setOnClickListener(new View.OnClickListener() {
+        calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 spin2.setOnItemSelectedListener(new Currencyto());
@@ -71,84 +73,84 @@ public class Currency_Converter extends Fragment {
                         if(z=="USD")
                         {
                             amt=number*0.013;
-                            tv_result.setText(Double.toString(amt));
+                            result.setText(Double.toString(amt));
                         }
                         else if(z=="POUND")
                         {
                             amt=number*0.0099;
-                            tv_result.setText(Double.toString(amt));
+                            result.setText(Double.toString(amt));
                         }
                         else if(z=="EURO")
                         {
                             amt=number*0.012;
-                            tv_result.setText(Double.toString(amt));
+                            result.setText(Double.toString(amt));
                         }
                         else
                         {
-                            tv_result.setText(Float.toString(number));
+                            result.setText(Float.toString(number));
                         }
                     }
                     else if(k=="USD")
                     {
                         if (z == "INR") {
                             amt = number * 74.47;
-                            tv_result.setText(Double.toString(amt));
+                            result.setText(Double.toString(amt));
                         }
                         else if(z=="POUND")
                         {
                             amt=number*0.73;
-                            tv_result.setText(Double.toString(amt));
+                            result.setText(Double.toString(amt));
                         }
                         else if(z=="EURO")
                         {
                             amt=number*0.86;
-                            tv_result.setText(Double.toString(amt));
+                            result.setText(Double.toString(amt));
                         }
                         else
                         {
-                            tv_result.setText(Float.toString(number));
+                            result.setText(Float.toString(number));
                         }
                     }
                     else if(k=="POUND")
                     {
                         if (z == "INR") {
                             amt = number * 101.45;
-                            tv_result.setText(Double.toString(amt));
+                            result.setText(Double.toString(amt));
                         }
                         else if(z=="USD")
                         {
                             amt=number*1.36;
-                            tv_result.setText(Double.toString(amt));
+                            result.setText(Double.toString(amt));
                         }
                         else if(z=="EURO")
                         {
                             amt=number*1.18;
-                            tv_result.setText(Double.toString(amt));
+                            result.setText(Double.toString(amt));
                         }
                         else
                         {
-                            tv_result.setText(Float.toString(number));
+                            result.setText(Float.toString(number));
                         }
                     }
                     else if(k=="EURO")
                     {
                         if (z == "INR") {
                             amt = number * 86.25;
-                            tv_result.setText(Double.toString(amt));
+                            result.setText(Double.toString(amt));
                         }
                         else if(z=="POUND")
                         {
                             amt=number*0.85;
-                            tv_result.setText(Double.toString(amt));
+                            result.setText(Double.toString(amt));
                         }
                         else if(z=="USD")
                         {
                             amt=number*1.16;
-                            tv_result.setText(Double.toString(amt));
+                            result.setText(Double.toString(amt));
                         }
                         else
                         {
-                            tv_result.setText(Float.toString(number));
+                            result.setText(Float.toString(number));
                         }
                     }
 

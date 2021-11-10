@@ -1,4 +1,4 @@
-package com.example.drawer_layout_with_fragments;
+package com.example.drawerLayout;
 
 import android.os.Bundle;
 
@@ -11,8 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.drawer_layout_with_fragments.R;
 
-public class Calculator extends Fragment {
+
+public class CalculatorActivity extends Fragment {
     TextView result;
     EditText Num1,Num2;
     Button mul,div,add,c,sub;
